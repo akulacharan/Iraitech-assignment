@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom usermodule</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body class="bg">
+    <nav class="navbar navbar-dark bg-dark">
+           <a class="navbar-brand" href="/" style="float:left;">
+               <h3><b><i>Custom user module</i></b></h3>
+           </a>
+         {% if user.is_authenticated %}
+
+
+        <a href="{{user.username}}/calculate" style="color:white;"><h2>Wlcome {{user.username}} Click here</h2></a>
+        <a href="{% url 'logout' %}" class="btn btn-danger" >Logout</a>
+        {% else %}
+        <a href="{% url 'register' %}"  class="btn btn-primary ">Register</a>
+        <a href="{% url 'login' %}" class="btn btn-warning">Login</a>
+        {% endif %}
+
+    </nav>
+
+
+        {% block content %}
+
+        {% endblock content %}
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+<!-- style for background image -->
+<style>
+    .bg {
+          /* The image used */
+          background-image: url("https://cdn.hipwallpaper.com/i/0/59/dEFmfw.jpg");
+
+          /* Full height */
+          height: 80%;
+
+
+          /* Center and scale the image nicely */
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+</style>

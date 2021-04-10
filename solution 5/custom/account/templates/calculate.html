@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="col-md-10 offset-md-1 mt-5">
+  <div class="jumbotron">
+      <h1 class="display-4">Calculate the summation </h1>
+      <div>
+          <form action="" method="post" autocomplete="off" class="form-horizontal form_middle" enctype='multipart/form-data' >
+              {% csrf_token %}
+              <div class="form-group col-md-6">
+                   <label for="Email">The number of replacements (n)</label>
+                    <input type="number" class="form-control" name="nvalue" id="email" required title= "Email" >
+              </div>
+
+              <div class="form-group col-md-6" >
+                    <label for="password">The (X) value</label>
+                    <input type="number" name="xvalue"    required title="8 characters minimum" class="form-control" id="password">
+              </div>
+
+              <button type="submit" class="btn btn-primary" >calucualte</button>
+
+          </form>
+      </div>
+      <h1>The Answer is : <label style="color:red;"> {{re}}</label></h1>
+  </div>
+</div>
+
+
+{% endblock %}
